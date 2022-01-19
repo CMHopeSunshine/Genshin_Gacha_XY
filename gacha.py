@@ -15,8 +15,6 @@ sv=hoshino.Service('原神抽卡-惜月')
 
 @sv.on_rex(r'^抽((?P<num>\d+)|(?:.*))十连(?P<pool>.*?)$')
 async def gacha(bot, ev):
-    if ev.channel_id != '1983536' and ev.channel_id != '1916789':
-        return
     uid = ev.user_id
     init_user_info(uid)
     sd = ev.sender
@@ -53,8 +51,6 @@ async def gacha(bot, ev):
 
 @sv.on_prefix('查看抽卡记录')
 async def gacharecord(bot, ev):
-    if ev.channel_id != '1983536' and ev.channel_id != '1916789':
-        return
     uid = ev.user_id
     init_user_info(uid)
     if user_info[uid]['gacha_list']['wish_total'] == 0:
@@ -117,8 +113,6 @@ async def getrwrecord(msg,uid):
 
 @sv.on_fullmatch('清空抽卡记录')
 async def deleterecord(bot,ev):
-    if ev.channel_id != '1983536' and ev.channel_id !='1916789':
-        return
     uid = ev.user_id
     if uid not in user_info:
         await bot.send(ev,'你此前并没有抽卡记录哦',at_sender=True)
