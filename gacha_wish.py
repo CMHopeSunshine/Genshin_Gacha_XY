@@ -7,7 +7,7 @@ from .util import filter_list, pil2b64,dict_to_object
 
 from .gacha_role import init_user_info, user_info, save_user_info
 assets_dir = Path(__file__) .parent / 'gacha_res'
-font_path = "/root/HoshinoBot/hoshino/modules/GenshinXY/zh-cn.ttf"
+font_path = Path(__file__) .parent / 'zh-cn.ttf'
 countfont = ImageFont.truetype(font_path, 35)
 timefont = ImageFont.truetype(font_path, 20)
 with open(assets_dir / 'type.json', 'r', encoding="utf-8") as fp:
@@ -19,7 +19,6 @@ cache_item = {}
 def random_int():
     return numpy.random.randint(low=0, high=10000, size=None, dtype='l')
 
-# 抽卡概率来自https://www.bilibili.com/read/cv10468091
 # 角色抽卡概率
 def character_probability(rank, count):
     ret = 0
@@ -208,7 +207,7 @@ async def ten(uid, gacha_data, sd) -> PngImagePlugin.PngImageFile:
     img2 = Image.new("RGB", img.size, (255, 255, 255))
     img2.paste(img, mask=img.split()[3])
     draw = ImageDraw.Draw(img2)
-    draw.text((27,545),('@%s %s  Created By 频道·尘世闲游' % (str(sd['nickname']),time_str)), font=timefont, fill="#8E8E8E")
+    draw.text((27,545),('@%s %s  Created By CMHopeSunshine' % (str(sd['nickname']),time_str)), font=timefont, fill="#8E8E8E")
     return img2
 
 async def more_ten(uid, gacha_data, num, sd):
