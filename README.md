@@ -2,7 +2,8 @@
     <h1>Genshin_Gacha_XY</h1>
     <h2>一个HoshinoBot的原神模拟抽卡插件</h2>
 </div>
-部分源码和资源文件参考和使用了[egenshin抽卡](https://github.com/pcrbot/erinilis-modules/tree/master/egenshin)的资源
+部分源码和资源文件参考和使用了 egenshin的资源
+https://github.com/pcrbot/erinilis-modules/
 
 ## 安装
 到`/hoshino/modules`目录下`git clone https://github.com/CMHopeSunshine/Genshin_Gacha_XY`
