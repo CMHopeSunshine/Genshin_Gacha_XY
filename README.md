@@ -1,0 +1,2 @@
+# Genshin_Gacha_XY
+一个HoshinoBot的原神模拟抽卡插件
